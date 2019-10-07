@@ -11,15 +11,21 @@ const handleClick = (key) => {
   dispatch({type: 'TEST_ACTION', payload: key})
 }
 
+const handleClickPlay = () => {
+  dispatch({type: 'PLAY'})
+}
+
+// console.log(state)
   return (
     <div className="Controller">
       <section className="controller-section">
         {keys.map(key => (
-          <button onClick={() => handleClick(key)}>
+          <button onClick={() => handleClick(key)} key={key}>
             <img src={iconsList[key]} alt={key}/>
           </button>
         ))}
       </section>
+      <button onClick={() => handleClickPlay()}>Play</button>
     </div>
   );
 }

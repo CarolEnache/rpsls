@@ -8,6 +8,7 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   console.log(state)
 
   return (

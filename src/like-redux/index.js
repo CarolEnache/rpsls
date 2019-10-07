@@ -1,5 +1,8 @@
+import { choice } from '../utils/computerChoice';
+
 export const initialState = {
-  someState: ''
+  userChoice: '',
+  computerChoice: ''
 }
 
 export const reducer = (state, action) => {
@@ -7,7 +10,12 @@ export const reducer = (state, action) => {
     case 'TEST_ACTION':
       return {
         ...state,
-        someState: action.payload
+        userChoice: action.payload
+      }
+    case 'PLAY':
+      return {
+        ...state,
+        computerChoice: choice()
       }
     default:
       return state
