@@ -1,21 +1,34 @@
-import { choice } from '../utils/computerChoice';
+import { choice } from '../utils';
 
 export const initialState = {
   userChoice: '',
-  computerChoice: ''
+  computerSelection: '',
+  userWins: 0,
+  computerWins: 0,
+  message: ''
 }
 
 export const reducer = (state, action) => {
   switch(action.type) {
-    case 'TEST_ACTION':
+    case 'USER_SELECTION':
+    return {
+        ...state,
+        userChoice: action.choice,
+        // message: message,
+        userWins: state.userWins +1
+      }
+    case 'CEVA':
       return {
         ...state,
-        userChoice: action.payload
+        userChoice: '',
+        message: action.ceva,
+        userWins: state.userWins +1
       }
     case 'PLAY':
       return {
         ...state,
-        computerChoice: choice()
+        userChoice: '',
+        computerSelection: choice()
       }
     default:
       return state

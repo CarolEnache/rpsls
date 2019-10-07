@@ -14,7 +14,7 @@ const computerChoice = (computer) => {
         return "spock"
     default:
       return "rock"
-  }
+  };
 }
 
-export const choice = () => computerChoice(randomNumber(1, 5))
+export const choice = () => computerChoice(randomNumber(1, 5));
