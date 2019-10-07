@@ -4,6 +4,6 @@ import paper from './paper.png';
 import scissors from './scissors.png';
 import spock from './spock.png';
 
-const iconsList = [lizard, rock, paper, scissors, spock];
+const iconsList = {lizard, rock, paper, scissors, spock};
 
 export default iconsList;
