@@ -1,7 +1,6 @@
 import React, { createContext, useReducer } from 'react';
 
 import { initialState, reducer } from './like-redux';
-import { findTheWinner } from './utils';
 import Controller from './components/controller';
 
 
@@ -11,8 +10,7 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { userChoice, computerSelection } = state;
-  const { message, winner } = findTheWinner(userChoice, computerSelection)
+  const { userChoice, computerSelection, message, winner } = state;
 
   console.log(state, message, winner)
 

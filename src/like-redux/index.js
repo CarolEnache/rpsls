@@ -1,4 +1,4 @@
-import { choice } from '../utils';
+import { choice, findTheWinner } from '../utils';
 
 export const initialState = {
   userChoice: '',
@@ -15,7 +15,8 @@ export const reducer = (state, action) => {
         ...state,
         userChoice: action.choice,
         // message: message,
-        userWins: state.userWins +1
+        userWins: state.userWins +1,
+        ...findTheWinner(action.choice, state.computerSelection),
       }
     case 'CEVA':
       return {
@@ -28,7 +29,9 @@ export const reducer = (state, action) => {
       return {
         ...state,
         userChoice: '',
-        computerSelection: choice()
+        computerSelection: choice(),
+        winner: '',
+        message: ''
       }
     default:
       return state
