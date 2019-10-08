@@ -1,4 +1,5 @@
 .App {
+  position: relative;
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
@@ -8,4 +9,25 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.blur-image {
+ -webkit-filter: blur(20px);
+}
+
+img {
+  width: 60px;
+}
+
+.presenation {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.presenation__message {
+  position: absolute;
+  top: 0%;
+  background: red;
+  width: 100%;
 }

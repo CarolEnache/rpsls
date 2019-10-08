@@ -4,6 +4,9 @@ import { initialState, reducer } from './like-redux';
 import { findTheWinner } from './utils';
 import Controller from './components/controller';
 
+
+import iconsList from './Icons';
+
 import './App.css';
 
 function App() {
@@ -13,13 +16,30 @@ function App() {
 
   console.log(state, message, winner)
 
+  const blur = userChoice ? '' : 'blur-image';
+  const disabled = message || !computerSelection;
+  const showText = !userChoice && computerSelection;
 
   return (
     <DispatchContext.Provider value={dispatch}>
       <StateContext.Provider value={state}>
         <div className="App">
-          <p>{message}</p>
-          <Controller disabled={message}/>
+          <div className="presenation">
+            <div className="presenation_image-wrapper">
+              <p>you chose</p>
+              <img src={iconsList[userChoice]} alt=""/>
+            </div>
+            <div>
+            <p>computer selection</p>
+            <img
+              src={iconsList[computerSelection]}
+              alt=""
+              className={blur}
+              />
+            </div>
+            <p className="presenation__message">{message}</p>
+          </div>
+          <Controller disableButtons={disabled} showText={showText}/>
         </div>
       </StateContext.Provider>
     </DispatchContext.Provider>
