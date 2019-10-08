@@ -18,13 +18,6 @@ export const reducer = (state, action) => {
         userWins: state.userWins +1,
         ...findTheWinner(action.choice, state.computerSelection),
       }
-    case 'CEVA':
-      return {
-        ...state,
-        userChoice: '',
-        message: action.ceva,
-        userWins: state.userWins +1
-      }
     case 'PLAY':
       return {
         ...state,

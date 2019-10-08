@@ -1,0 +1,19 @@
+.presenation {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+
+  &__message {
+    position: absolute;
+    top: 0%;
+    background: blue;
+    width: 100%;
+
+    &--userWins {
+      background: green;
+    }
+    &--computerWins {
+      background: red;
+    }
+  }
+}

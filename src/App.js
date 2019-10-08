@@ -2,9 +2,7 @@ import React, { createContext, useReducer } from 'react';
 
 import { initialState, reducer } from './like-redux';
 import Controller from './components/controller';
-
-
-import iconsList from './Icons';
+import Presentation from './components/presentation';
 
 import './App.css';
 
@@ -14,31 +12,19 @@ function App() {
 
   console.log(state, message, winner)
 
-  const blur = userChoice ? '' : 'blur-image';
   const disabled = message || !computerSelection;
   const showText = !userChoice && computerSelection;
 
   return (
     <DispatchContext.Provider value={dispatch}>
       <StateContext.Provider value={state}>
-        <div className="App">
-          <div className="presenation">
-            <div className="presenation_image-wrapper">
-              <p>you chose</p>
-              <img src={iconsList[userChoice]} alt=""/>
-            </div>
-            <div>
-            <p>computer selection</p>
-            <img
-              src={iconsList[computerSelection]}
-              alt=""
-              className={blur}
-              />
-            </div>
-            <p className="presenation__message">{message}</p>
-          </div>
-          <Controller disableButtons={disabled} showText={showText}/>
-        </div>
+        <Presentation
+          message={message}
+          userChoice={userChoice}
+          computerSelection={computerSelection}
+          winner={winner}
+        />
+        <Controller disableButtons={disabled} showText={showText} />
       </StateContext.Provider>
     </DispatchContext.Provider>
   );
