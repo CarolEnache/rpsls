@@ -1,0 +1,14 @@
+.restart-game {
+  text-align: end;
+
+  &__button {
+    color: white;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 15%;
+    padding: .3rem;
+    width: 15%;
+    margin-left: 10%;
+  }
+}
+

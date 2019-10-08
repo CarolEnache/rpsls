@@ -3,7 +3,7 @@ const result = (userChoice, computerSelection) => {
   let winner;
   if (computerSelection !== '' && computerSelection === userChoice) {
     message = 'Tie!';
-    winner = 'tie';
+    winner = 'ties';
   } else if (computerSelection === 'rock') {
     if (userChoice === 'paper') {
       //rock vs paper

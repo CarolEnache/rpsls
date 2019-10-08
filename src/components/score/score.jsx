@@ -1,4 +1,5 @@
 import React from 'react';
+import './score.scss';
 
 const Score = ({ userWins, ties, computerWins}) => {
   return (

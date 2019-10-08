@@ -27,7 +27,15 @@ return (
           </button>
         ))}
       </section>
-      {showText ? <p className="controller__weapon-selection">Choose your weapon</p> : <button onClick={() => handleClickPlay()} className="controller__play-button">{playButtonText}</button>}
+      {showText ?
+        <p className="controller__weapon-selection">Choose your weapon</p>
+          :
+        <button
+          onClick={() => handleClickPlay()}
+          className="controller__play-button"
+          >
+            {playButtonText}
+        </button>}
     </div>
   );
 }
