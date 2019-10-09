@@ -3,9 +3,7 @@
   background-color: #282c34;
   min-height: 100vh;
   flex-direction: column;
-  align-items: center;
-      text-align: center;
-  justify-content: center;
+  text-align: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -17,4 +15,16 @@
 
 img {
   width: 60px;
+}
+
+ @media only screen and (min-width: 400px) {
+   .blur-image {
+    filter: blur(22px);
+    -webkit-filter: blur(22px);
+  }
+
+  img {
+    width: 160px;
+  }
+
 }

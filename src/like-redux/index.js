@@ -32,7 +32,8 @@ export const reducer = (state, action) => {
         ...state,
         userWins: 0,
         computerWins: 0,
-        ties: 0
+        ties: 0,
+        message: ''
       }
     default:
       return state

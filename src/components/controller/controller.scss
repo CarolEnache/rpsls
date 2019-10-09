@@ -25,3 +25,18 @@
   }
 }
 
+ @media only screen and (min-width: 400px) {
+  .controller {
+    width: 100%;
+
+    &__weapon-selection,
+    &__play-button {
+      width: auto;
+    }
+  }
+  button {
+    background: bottom;
+    border: none;
+    outline: none;
+  }
+}
